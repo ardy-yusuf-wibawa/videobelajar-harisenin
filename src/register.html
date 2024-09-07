@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./output.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+        <title>Register</title>
+    </head>
+    <body class="bg-amber-50">
+        <header class="bg-white shadow">
+            <div class="container mx-auto flex items-center justify-center bg-white py-6 md:justify-between">
+                <img src="../assets/logo.svg" alt="Logo" />
+            </div>
+        </header>
+        <div class="flex min-h-screen items-center justify-center">
+            <div class="w-full max-w-md rounded-lg bg-white p-8 shadow-md">
+                <h2 class="mb-2 text-center text-xl font-semibold">Pendaftaran Akun</h2>
+                <p class="mb-6 text-center text-sm text-gray-600">Yuk, daftar dan nikmati akses belajar gratis!</p>
+                <form>
+                    <!-- Full Name -->
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-gray-700" for="name">Nama Lengkap</label>
+                        <input
+                            type="text"
+                            id="name"
+                            class="mt-1 w-full rounded-md border border-gray-300 p-2 focus:border-green-500 focus:ring-green-500"
+                            required
+                        />
+                    </div>
+
+                    <!-- Email -->
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-gray-700" for="email">Email</label>
+                        <input
+                            type="email"
+                            id="email"
+                            class="mt-1 w-full rounded-md border border-gray-300 p-2 focus:border-green-500 focus:ring-green-500"
+                            required
+                        />
+                    </div>
+
+                    <!-- Phone Number -->
+                    <div class="mb-4 flex space-x-2">
+                        <div class="w-1/4">
+                            <label class="block text-sm font-medium text-gray-700" for="country-code">Kode Negara</label>
+
+                            <select
+                                id="country-code"
+                                class="mt-1 w-full rounded-md border border-gray-300 p-2 focus:border-green-500 focus:ring-green-500"
+                            >
+                                <option>+62</option>
+                                <!-- Add more country codes as needed -->
+                            </select>
+                        </div>
+                        <div class="w-3/4">
+                            <label class="block text-sm font-medium text-gray-700" for="phone">No. Telp</label>
+                            <input
+                                type="tel"
+                                id="phone"
+                                class="mt-1 w-full rounded-md border border-gray-300 p-2 focus:border-green-500 focus:ring-green-500"
+                                required
+                            />
+                        </div>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-gray-700" for="password">Kata Sandi</label>
+                        <input
+                            type="password"
+                            id="password"
+                            class="mt-1 w-full rounded-md border border-gray-300 p-2 focus:border-green-500 focus:ring-green-500"
+                            required
+                        />
+                    </div>
+
+                    <!-- Confirm Password -->
+                    <div class="">
+                        <label class="block text-sm font-medium text-gray-700" for="confirm-password">Konfirmasi Kata Sandi</label>
+                        <input
+                            type="password"
+                            id="confirm-password"
+                            class="mt-1 w-full rounded-md border border-gray-300 p-2 focus:border-green-500 focus:ring-green-500"
+                            required
+                        />
+                    </div>
+                    <div class="flex items-end justify-end">
+                        <a href="#" class="text-sm text-gray-500 hover:text-green-500">Lupa Password?</a>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="my-4">
+                        <button
+                            type="submit"
+                            class="w-full rounded-lg bg-green-500 py-2 font-semibold text-white transition hover:bg-green-600"
+                        >
+                            Daftar
+                        </button>
+                    </div>
+                    <div class="my-2">
+                        <button
+                            type="submit"
+                            class="w-full rounded-lg bg-green-200 py-2 font-semibold text-green-700 transition hover:bg-green-600"
+                        >
+                            Masuk
+                        </button>
+                    </div>
+
+                    <!-- Additional Links -->
+                    <div class="my-4 flex items-center">
+                        <div class="flex-grow border-t border-gray-300"></div>
+                        <span class="mx-4 text-gray-500">atau</span>
+                        <div class="flex-grow border-t border-gray-300"></div>
+                    </div>
+
+                    <!-- Google Sign-Up -->
+                    <button
+                        type="button"
+                        class="flex w-full items-center justify-center gap-2 rounded-lg border border-gray-300 py-2 text-gray-600 hover:bg-gray-100"
+                    >
+                        <img src="../assets/google.svg" alt="Google" class="h-5 w-5" />
+                        Daftar dengan Google
+                    </button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
