@@ -6,27 +6,53 @@
         <link rel="stylesheet" href="./output.css" />
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet" />
         <title>Video Belajar</title>
+        <script>
+            function toggleMenu() {
+                document.getElementById('mobile-menu').classList.toggle('hidden');
+            }
+        </script>
     </head>
     <body class="bg-gray-100">
         <!-- Header -->
         <header class="bg-white shadow">
             <div class="container mx-auto flex items-center justify-between px-4 py-6">
-                <img src="../assets/logo.svg" alt="Logo" />
-                <nav>
-                    <ul class="flex items-center space-x-6">
-                        <li><a href="#" class="text-gray-600 hover:text-gray-900">Kategori</a></li>
-                        <li>
-                            <a href="#" class="text-gray-600 hover:text-gray-900">
-                                <img src="../assets/2x1_SuperMarioHub_image1600w.jpg" alt="User" class="sm:w-30 hidden h-10 rounded-md" />
-                            </a>
-                        </li>
-                    </ul>
+                <!-- Logo -->
+                <img src="../assets/logo.svg" alt="Logo" class="h-8" />
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden items-center space-x-6 md:flex">
+                    <a href="#" class="text-gray-600 hover:text-gray-900">Kategori</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900">
+                        <img src="../assets/2x1_SuperMarioHub_image1600w.jpg" alt="User" class="h-10 w-full rounded-md bg-cover" />
+                    </a>
+                </nav>
+
+                <!-- Hamburger Menu Button -->
+                <button class="focus:outline-none md:hidden" onclick="toggleMenu()">
+                    <svg
+                        class="h-6 w-6 text-gray-700"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden">
+                <nav class="bg-gray-100 px-4 py-2">
+                    <a href="#" class="block py-2 text-gray-600 hover:text-gray-900">Login</a>
+                    <a href="#" class="block py-2 text-gray-600 hover:text-gray-900">Register</a>
+                    <a href="#" class="block py-2 text-gray-600 hover:text-gray-900">Kategori</a>
                 </nav>
             </div>
         </header>
 
         <!-- Hero Section -->
-        <section class="bg-hero-pattern bg-black/60 bg-cover bg-center bg-no-repeat py-16 text-white bg-blend-darken">
+        <section class="bg-black/60 bg-hero-pattern bg-cover bg-center bg-no-repeat py-16 text-white bg-blend-darken">
             <div class="container mx-auto text-center">
                 <h2 class="mb-4 text-3xl font-bold">Revolusi Pembelajaran: Temukan Ilmu Baru melalui Platform Video Interaktif!</h2>
                 <p class="mb-6">
@@ -45,10 +71,10 @@
             <p class="mb-6 text-sm text-gray-600">Jelajahi Dunia Pengetahuan Melalui Pilihan Kami!</p>
 
             <!-- Tabs Section -->
-            <div class="mb-6 flex space-x-4 overflow-auto border-b-2 border-gray-200 pb-2 text-xs md:text-sm">
+            <div class="mb-6 flex flex-row space-x-4 overflow-auto whitespace-nowrap border-b-2 border-gray-200 pb-2 text-xs sm:text-sm">
                 <a href="#" class="relative pb-2 font-semibold text-red-500 hover:text-red-500">
                     Semua Kelas
-                    <span class="absolute bottom-0 left-0 h-[3px] w-full rounded-full bg-red-500"></span>
+                    <span class="relative mb-2 h-[3px] w-full rounded-full bg-red-500"></span>
                 </a>
                 <a href="#" class="text-gray-500 transition hover:text-red-500">Pemasaran</a>
                 <a href="#" class="text-gray-500 transition hover:text-red-500">Desain</a>
@@ -62,12 +88,12 @@
                     <img src="../assets/image-1.webp" alt="Course Image" class="h-32 w-full object-cover" />
                     <div class="p-4">
                         <h4 class="font-semibold sm:text-xs md:text-sm lg:text-base">Big 4 Auditor Financial Analyst</h4>
-                        <p class="mt-2 text-xs leading-relaxed text-gray-600">
+                        <p class="mt-2 hidden text-xs leading-relaxed text-gray-600 sm:block">
                             Mulai transformasi dengan instruktur profesional, harga yang terjangkau, dan...
                         </p>
                         <div class="mt-2 flex items-center">
                             <img src="../assets/instructor-1.png" alt="Instructor" class="h-6 w-6 rounded-full" />
-                            <div class="ml-2">
+                            <div class="ml-2 flex flex-col items-start whitespace-nowrap">
                                 <span class="text-sm font-semibold text-gray-700">Jenna Ortega</span>
                                 <span class="text-sm text-gray-500">Senior Accountant di <b>Gojek</b></span>
                             </div>
@@ -76,61 +102,12 @@
                             <!-- Rating Section -->
                             <div class="flex items-center space-x-1">
                                 <!-- Star icons -->
-                                <svg
-                                    class="h-4 w-4 text-yellow-400"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.974a1 1 0 00.95.69h4.18c.969 0 1.372 1.24.588 1.81l-3.396 2.47a1 1 0 00-.364 1.118l1.287 3.975c.3.92-.755 1.688-1.538 1.118l-3.396-2.47a1 1 0 00-1.176 0l-3.396 2.47c-.783.57-1.837-.198-1.538-1.118l1.287-3.975a1 1 0 00-.364-1.118l-3.396-2.47c-.784-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.974z"
-                                    ></path>
-                                </svg>
-                                <!-- Additional star icons -->
-                                <svg
-                                    class="h-4 w-4 text-yellow-400"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.974a1 1 0 00.95.69h4.18c.969 0 1.372 1.24.588 1.81l-3.396 2.47a1 1 0 00-.364 1.118l1.287 3.975c.3.92-.755 1.688-1.538 1.118l-3.396-2.47a1 1 0 00-1.176 0l-3.396 2.47c-.783.57-1.837-.198-1.538-1.118l1.287-3.975a1 1 0 00-.364-1.118l-3.396-2.47c-.784-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.974z"
-                                    ></path>
-                                </svg>
-                                <svg
-                                    class="h-4 w-4 text-yellow-400"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.974a1 1 0 00.95.69h4.18c.969 0 1.372 1.24.588 1.81l-3.396 2.47a1 1 0 00-.364 1.118l1.287 3.975c.3.92-.755 1.688-1.538 1.118l-3.396-2.47a1 1 0 00-1.176 0l-3.396 2.47c-.783.57-1.837-.198-1.538-1.118l1.287-3.975a1 1 0 00-.364-1.118l-3.396-2.47c-.784-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.974z"
-                                    ></path>
-                                </svg>
-                                <svg class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                    <defs>
-                                        <linearGradient id="half">
-                                            <stop offset="50%" stop-color="currentColor" />
-                                            <stop offset="50%" stop-color="#d1d5db" />
-                                        </linearGradient>
-                                    </defs>
-                                    <path
-                                        fill="url(#half)"
-                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.974a1 1 0 00.95.69h4.18c.969 0 1.372 1.24.588 1.81l-3.396 2.47a1 1 0 00-.364 1.118l1.287 3.975c.3.92-.755 1.688-1.538 1.118l-3.396-2.47a1 1 0 00-1.176 0l-3.396 2.47c-.783.57-1.837-.198-1.538-1.118l1.287-3.975a1 1 0 00-.364-1.118l-3.396-2.47c-.784-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.974z"
-                                    ></path>
-                                </svg>
-                                <svg
-                                    class="h-4 w-4 text-gray-300"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.974a1 1 0 00.95.69h4.18c.969 0 1.372 1.24.588 1.81l-3.396 2.47a1 1 0 00-.364 1.118l1.287 3.975c.3.92-.755 1.688-1.538 1.118l-3.396-2.47a1 1 0 00-1.176 0l-3.396 2.47c-.783.57-1.837-.198-1.538-1.118l1.287-3.975a1 1 0 00-.364-1.118l-3.396-2.47c-.784-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.974z"
-                                    ></path>
-                                </svg>
-                                <span class="ml-1 text-sm text-gray-600">3.5</span>
-                                <span class="ml-1 text-xs text-gray-500">(86)</span>
+                                <img src="../assets/full-star.svg" alt="Star" class="h-4 w-4" />
+                                <img src="../assets/full-star.svg" alt="Star" class="h-4 w-4" />
+                                <img src="../assets/full-star.svg" alt="Star" class="h-4 w-4" />
+                                <img src="../assets/half-star.svg" alt="Star" class="h-4 w-4" />
+                                <img src="../assets/star.svg" alt="Star" class="h-4 w-4" />
+                                <span class="ml-1 text-sm text-gray-600 underline">3.5 (86)</span>
                             </div>
                             <!-- Price Section -->
                             <span class="font-bold text-green-500">Rp 300K</span>
@@ -141,12 +118,12 @@
                     <img src="../assets/image-1.webp" alt="Course Image" class="h-32 w-full object-cover" />
                     <div class="p-4">
                         <h4 class="font-semibold sm:text-xs md:text-sm lg:text-base">Big 4 Auditor Financial Analyst</h4>
-                        <p class="mt-2 text-xs leading-relaxed text-gray-600">
+                        <p class="mt-2 hidden text-xs leading-relaxed text-gray-600 sm:block">
                             Mulai transformasi dengan instruktur profesional, harga yang terjangkau, dan...
                         </p>
                         <div class="mt-2 flex items-center">
                             <img src="../assets/instructor-1.png" alt="Instructor" class="h-6 w-6 rounded-full" />
-                            <div class="ml-2">
+                            <div class="ml-2 flex flex-col items-start whitespace-nowrap">
                                 <span class="text-sm font-semibold text-gray-700">Jenna Ortega</span>
                                 <span class="text-sm text-gray-500">Senior Accountant di <b>Gojek</b></span>
                             </div>
@@ -155,61 +132,12 @@
                             <!-- Rating Section -->
                             <div class="flex items-center space-x-1">
                                 <!-- Star icons -->
-                                <svg
-                                    class="h-4 w-4 text-yellow-400"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.974a1 1 0 00.95.69h4.18c.969 0 1.372 1.24.588 1.81l-3.396 2.47a1 1 0 00-.364 1.118l1.287 3.975c.3.92-.755 1.688-1.538 1.118l-3.396-2.47a1 1 0 00-1.176 0l-3.396 2.47c-.783.57-1.837-.198-1.538-1.118l1.287-3.975a1 1 0 00-.364-1.118l-3.396-2.47c-.784-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.974z"
-                                    ></path>
-                                </svg>
-                                <!-- Additional star icons -->
-                                <svg
-                                    class="h-4 w-4 text-yellow-400"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.974a1 1 0 00.95.69h4.18c.969 0 1.372 1.24.588 1.81l-3.396 2.47a1 1 0 00-.364 1.118l1.287 3.975c.3.92-.755 1.688-1.538 1.118l-3.396-2.47a1 1 0 00-1.176 0l-3.396 2.47c-.783.57-1.837-.198-1.538-1.118l1.287-3.975a1 1 0 00-.364-1.118l-3.396-2.47c-.784-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.974z"
-                                    ></path>
-                                </svg>
-                                <svg
-                                    class="h-4 w-4 text-yellow-400"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.974a1 1 0 00.95.69h4.18c.969 0 1.372 1.24.588 1.81l-3.396 2.47a1 1 0 00-.364 1.118l1.287 3.975c.3.92-.755 1.688-1.538 1.118l-3.396-2.47a1 1 0 00-1.176 0l-3.396 2.47c-.783.57-1.837-.198-1.538-1.118l1.287-3.975a1 1 0 00-.364-1.118l-3.396-2.47c-.784-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.974z"
-                                    ></path>
-                                </svg>
-                                <svg class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                    <defs>
-                                        <linearGradient id="half">
-                                            <stop offset="50%" stop-color="currentColor" />
-                                            <stop offset="50%" stop-color="#d1d5db" />
-                                        </linearGradient>
-                                    </defs>
-                                    <path
-                                        fill="url(#half)"
-                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.974a1 1 0 00.95.69h4.18c.969 0 1.372 1.24.588 1.81l-3.396 2.47a1 1 0 00-.364 1.118l1.287 3.975c.3.92-.755 1.688-1.538 1.118l-3.396-2.47a1 1 0 00-1.176 0l-3.396 2.47c-.783.57-1.837-.198-1.538-1.118l1.287-3.975a1 1 0 00-.364-1.118l-3.396-2.47c-.784-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.974z"
-                                    ></path>
-                                </svg>
-                                <svg
-                                    class="h-4 w-4 text-gray-300"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.974a1 1 0 00.95.69h4.18c.969 0 1.372 1.24.588 1.81l-3.396 2.47a1 1 0 00-.364 1.118l1.287 3.975c.3.92-.755 1.688-1.538 1.118l-3.396-2.47a1 1 0 00-1.176 0l-3.396 2.47c-.783.57-1.837-.198-1.538-1.118l1.287-3.975a1 1 0 00-.364-1.118l-3.396-2.47c-.784-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.974z"
-                                    ></path>
-                                </svg>
-                                <span class="ml-1 text-sm text-gray-600">3.5</span>
-                                <span class="ml-1 text-xs text-gray-500">(86)</span>
+                                <img src="../assets/full-star.svg" alt="Star" class="h-4 w-4" />
+                                <img src="../assets/full-star.svg" alt="Star" class="h-4 w-4" />
+                                <img src="../assets/full-star.svg" alt="Star" class="h-4 w-4" />
+                                <img src="../assets/half-star.svg" alt="Star" class="h-4 w-4" />
+                                <img src="../assets/star.svg" alt="Star" class="h-4 w-4" />
+                                <span class="ml-1 text-sm text-gray-600 underline">3.5 (86)</span>
                             </div>
                             <!-- Price Section -->
                             <span class="font-bold text-green-500">Rp 300K</span>
@@ -220,12 +148,12 @@
                     <img src="../assets/image-1.webp" alt="Course Image" class="h-32 w-full object-cover" />
                     <div class="p-4">
                         <h4 class="font-semibold sm:text-xs md:text-sm lg:text-base">Big 4 Auditor Financial Analyst</h4>
-                        <p class="mt-2 text-xs leading-relaxed text-gray-600">
+                        <p class="mt-2 hidden text-xs leading-relaxed text-gray-600 sm:block">
                             Mulai transformasi dengan instruktur profesional, harga yang terjangkau, dan...
                         </p>
                         <div class="mt-2 flex items-center">
                             <img src="../assets/instructor-1.png" alt="Instructor" class="h-6 w-6 rounded-full" />
-                            <div class="ml-2">
+                            <div class="ml-2 flex flex-col items-start whitespace-nowrap">
                                 <span class="text-sm font-semibold text-gray-700">Jenna Ortega</span>
                                 <span class="text-sm text-gray-500">Senior Accountant di <b>Gojek</b></span>
                             </div>
@@ -234,311 +162,24 @@
                             <!-- Rating Section -->
                             <div class="flex items-center space-x-1">
                                 <!-- Star icons -->
-                                <svg
-                                    class="h-4 w-4 text-yellow-400"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.974a1 1 0 00.95.69h4.18c.969 0 1.372 1.24.588 1.81l-3.396 2.47a1 1 0 00-.364 1.118l1.287 3.975c.3.92-.755 1.688-1.538 1.118l-3.396-2.47a1 1 0 00-1.176 0l-3.396 2.47c-.783.57-1.837-.198-1.538-1.118l1.287-3.975a1 1 0 00-.364-1.118l-3.396-2.47c-.784-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.974z"
-                                    ></path>
-                                </svg>
-                                <!-- Additional star icons -->
-                                <svg
-                                    class="h-4 w-4 text-yellow-400"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.974a1 1 0 00.95.69h4.18c.969 0 1.372 1.24.588 1.81l-3.396 2.47a1 1 0 00-.364 1.118l1.287 3.975c.3.92-.755 1.688-1.538 1.118l-3.396-2.47a1 1 0 00-1.176 0l-3.396 2.47c-.783.57-1.837-.198-1.538-1.118l1.287-3.975a1 1 0 00-.364-1.118l-3.396-2.47c-.784-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.974z"
-                                    ></path>
-                                </svg>
-                                <svg
-                                    class="h-4 w-4 text-yellow-400"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.974a1 1 0 00.95.69h4.18c.969 0 1.372 1.24.588 1.81l-3.396 2.47a1 1 0 00-.364 1.118l1.287 3.975c.3.92-.755 1.688-1.538 1.118l-3.396-2.47a1 1 0 00-1.176 0l-3.396 2.47c-.783.57-1.837-.198-1.538-1.118l1.287-3.975a1 1 0 00-.364-1.118l-3.396-2.47c-.784-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.974z"
-                                    ></path>
-                                </svg>
-                                <svg class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                    <defs>
-                                        <linearGradient id="half">
-                                            <stop offset="50%" stop-color="currentColor" />
-                                            <stop offset="50%" stop-color="#d1d5db" />
-                                        </linearGradient>
-                                    </defs>
-                                    <path
-                                        fill="url(#half)"
-                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.974a1 1 0 00.95.69h4.18c.969 0 1.372 1.24.588 1.81l-3.396 2.47a1 1 0 00-.364 1.118l1.287 3.975c.3.92-.755 1.688-1.538 1.118l-3.396-2.47a1 1 0 00-1.176 0l-3.396 2.47c-.783.57-1.837-.198-1.538-1.118l1.287-3.975a1 1 0 00-.364-1.118l-3.396-2.47c-.784-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.974z"
-                                    ></path>
-                                </svg>
-                                <svg
-                                    class="h-4 w-4 text-gray-300"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.974a1 1 0 00.95.69h4.18c.969 0 1.372 1.24.588 1.81l-3.396 2.47a1 1 0 00-.364 1.118l1.287 3.975c.3.92-.755 1.688-1.538 1.118l-3.396-2.47a1 1 0 00-1.176 0l-3.396 2.47c-.783.57-1.837-.198-1.538-1.118l1.287-3.975a1 1 0 00-.364-1.118l-3.396-2.47c-.784-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.974z"
-                                    ></path>
-                                </svg>
-                                <span class="ml-1 text-sm text-gray-600">3.5</span>
-                                <span class="ml-1 text-xs text-gray-500">(86)</span>
+                                <img src="../assets/full-star.svg" alt="Star" class="h-4 w-4" />
+                                <img src="../assets/full-star.svg" alt="Star" class="h-4 w-4" />
+                                <img src="../assets/full-star.svg" alt="Star" class="h-4 w-4" />
+                                <img src="../assets/half-star.svg" alt="Star" class="h-4 w-4" />
+                                <img src="../assets/star.svg" alt="Star" class="h-4 w-4" />
+                                <span class="ml-1 text-sm text-gray-600 underline">3.5 (86)</span>
                             </div>
                             <!-- Price Section -->
                             <span class="font-bold text-green-500">Rp 300K</span>
                         </div>
                     </div>
                 </div>
-                <div class="overflow-hidden rounded-lg bg-white shadow-md">
-                    <img src="../assets/image-1.webp" alt="Course Image" class="h-32 w-full object-cover" />
-                    <div class="p-4">
-                        <h4 class="font-semibold sm:text-xs md:text-sm lg:text-base">Big 4 Auditor Financial Analyst</h4>
-                        <p class="mt-2 text-xs leading-relaxed text-gray-600">
-                            Mulai transformasi dengan instruktur profesional, harga yang terjangkau, dan...
-                        </p>
-                        <div class="mt-2 flex items-center">
-                            <img src="../assets/instructor-1.png" alt="Instructor" class="h-6 w-6 rounded-full" />
-                            <div class="ml-2">
-                                <span class="text-sm font-semibold text-gray-700">Jenna Ortega</span>
-                                <span class="text-sm text-gray-500">Senior Accountant di <b>Gojek</b></span>
-                            </div>
-                        </div>
-                        <div class="mt-4 flex items-center justify-between">
-                            <!-- Rating Section -->
-                            <div class="flex items-center space-x-1">
-                                <!-- Star icons -->
-                                <svg
-                                    class="h-4 w-4 text-yellow-400"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.974a1 1 0 00.95.69h4.18c.969 0 1.372 1.24.588 1.81l-3.396 2.47a1 1 0 00-.364 1.118l1.287 3.975c.3.92-.755 1.688-1.538 1.118l-3.396-2.47a1 1 0 00-1.176 0l-3.396 2.47c-.783.57-1.837-.198-1.538-1.118l1.287-3.975a1 1 0 00-.364-1.118l-3.396-2.47c-.784-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.974z"
-                                    ></path>
-                                </svg>
-                                <!-- Additional star icons -->
-                                <svg
-                                    class="h-4 w-4 text-yellow-400"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.974a1 1 0 00.95.69h4.18c.969 0 1.372 1.24.588 1.81l-3.396 2.47a1 1 0 00-.364 1.118l1.287 3.975c.3.92-.755 1.688-1.538 1.118l-3.396-2.47a1 1 0 00-1.176 0l-3.396 2.47c-.783.57-1.837-.198-1.538-1.118l1.287-3.975a1 1 0 00-.364-1.118l-3.396-2.47c-.784-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.974z"
-                                    ></path>
-                                </svg>
-                                <svg
-                                    class="h-4 w-4 text-yellow-400"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.974a1 1 0 00.95.69h4.18c.969 0 1.372 1.24.588 1.81l-3.396 2.47a1 1 0 00-.364 1.118l1.287 3.975c.3.92-.755 1.688-1.538 1.118l-3.396-2.47a1 1 0 00-1.176 0l-3.396 2.47c-.783.57-1.837-.198-1.538-1.118l1.287-3.975a1 1 0 00-.364-1.118l-3.396-2.47c-.784-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.974z"
-                                    ></path>
-                                </svg>
-                                <svg class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                    <defs>
-                                        <linearGradient id="half">
-                                            <stop offset="50%" stop-color="currentColor" />
-                                            <stop offset="50%" stop-color="#d1d5db" />
-                                        </linearGradient>
-                                    </defs>
-                                    <path
-                                        fill="url(#half)"
-                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.974a1 1 0 00.95.69h4.18c.969 0 1.372 1.24.588 1.81l-3.396 2.47a1 1 0 00-.364 1.118l1.287 3.975c.3.92-.755 1.688-1.538 1.118l-3.396-2.47a1 1 0 00-1.176 0l-3.396 2.47c-.783.57-1.837-.198-1.538-1.118l1.287-3.975a1 1 0 00-.364-1.118l-3.396-2.47c-.784-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.974z"
-                                    ></path>
-                                </svg>
-                                <svg
-                                    class="h-4 w-4 text-gray-300"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.974a1 1 0 00.95.69h4.18c.969 0 1.372 1.24.588 1.81l-3.396 2.47a1 1 0 00-.364 1.118l1.287 3.975c.3.92-.755 1.688-1.538 1.118l-3.396-2.47a1 1 0 00-1.176 0l-3.396 2.47c-.783.57-1.837-.198-1.538-1.118l1.287-3.975a1 1 0 00-.364-1.118l-3.396-2.47c-.784-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.974z"
-                                    ></path>
-                                </svg>
-                                <span class="ml-1 text-sm text-gray-600">3.5</span>
-                                <span class="ml-1 text-xs text-gray-500">(86)</span>
-                            </div>
-                            <!-- Price Section -->
-                            <span class="font-bold text-green-500">Rp 300K</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="overflow-hidden rounded-lg bg-white shadow-md">
-                    <img src="../assets/image-1.webp" alt="Course Image" class="h-32 w-full object-cover" />
-                    <div class="p-4">
-                        <h4 class="font-semibold sm:text-xs md:text-sm lg:text-base">Big 4 Auditor Financial Analyst</h4>
-                        <p class="mt-2 text-xs leading-relaxed text-gray-600">
-                            Mulai transformasi dengan instruktur profesional, harga yang terjangkau, dan...
-                        </p>
-                        <div class="mt-2 flex items-center">
-                            <img src="../assets/instructor-1.png" alt="Instructor" class="h-6 w-6 rounded-full" />
-                            <div class="ml-2">
-                                <span class="text-sm font-semibold text-gray-700">Jenna Ortega</span>
-                                <span class="text-sm text-gray-500">Senior Accountant di <b>Gojek</b></span>
-                            </div>
-                        </div>
-                        <div class="mt-4 flex items-center justify-between">
-                            <!-- Rating Section -->
-                            <div class="flex items-center space-x-1">
-                                <!-- Star icons -->
-                                <svg
-                                    class="h-4 w-4 text-yellow-400"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.974a1 1 0 00.95.69h4.18c.969 0 1.372 1.24.588 1.81l-3.396 2.47a1 1 0 00-.364 1.118l1.287 3.975c.3.92-.755 1.688-1.538 1.118l-3.396-2.47a1 1 0 00-1.176 0l-3.396 2.47c-.783.57-1.837-.198-1.538-1.118l1.287-3.975a1 1 0 00-.364-1.118l-3.396-2.47c-.784-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.974z"
-                                    ></path>
-                                </svg>
-                                <!-- Additional star icons -->
-                                <svg
-                                    class="h-4 w-4 text-yellow-400"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.974a1 1 0 00.95.69h4.18c.969 0 1.372 1.24.588 1.81l-3.396 2.47a1 1 0 00-.364 1.118l1.287 3.975c.3.92-.755 1.688-1.538 1.118l-3.396-2.47a1 1 0 00-1.176 0l-3.396 2.47c-.783.57-1.837-.198-1.538-1.118l1.287-3.975a1 1 0 00-.364-1.118l-3.396-2.47c-.784-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.974z"
-                                    ></path>
-                                </svg>
-                                <svg
-                                    class="h-4 w-4 text-yellow-400"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.974a1 1 0 00.95.69h4.18c.969 0 1.372 1.24.588 1.81l-3.396 2.47a1 1 0 00-.364 1.118l1.287 3.975c.3.92-.755 1.688-1.538 1.118l-3.396-2.47a1 1 0 00-1.176 0l-3.396 2.47c-.783.57-1.837-.198-1.538-1.118l1.287-3.975a1 1 0 00-.364-1.118l-3.396-2.47c-.784-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.974z"
-                                    ></path>
-                                </svg>
-                                <svg class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                    <defs>
-                                        <linearGradient id="half">
-                                            <stop offset="50%" stop-color="currentColor" />
-                                            <stop offset="50%" stop-color="#d1d5db" />
-                                        </linearGradient>
-                                    </defs>
-                                    <path
-                                        fill="url(#half)"
-                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.974a1 1 0 00.95.69h4.18c.969 0 1.372 1.24.588 1.81l-3.396 2.47a1 1 0 00-.364 1.118l1.287 3.975c.3.92-.755 1.688-1.538 1.118l-3.396-2.47a1 1 0 00-1.176 0l-3.396 2.47c-.783.57-1.837-.198-1.538-1.118l1.287-3.975a1 1 0 00-.364-1.118l-3.396-2.47c-.784-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.974z"
-                                    ></path>
-                                </svg>
-                                <svg
-                                    class="h-4 w-4 text-gray-300"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.974a1 1 0 00.95.69h4.18c.969 0 1.372 1.24.588 1.81l-3.396 2.47a1 1 0 00-.364 1.118l1.287 3.975c.3.92-.755 1.688-1.538 1.118l-3.396-2.47a1 1 0 00-1.176 0l-3.396 2.47c-.783.57-1.837-.198-1.538-1.118l1.287-3.975a1 1 0 00-.364-1.118l-3.396-2.47c-.784-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.974z"
-                                    ></path>
-                                </svg>
-                                <span class="ml-1 text-sm text-gray-600">3.5</span>
-                                <span class="ml-1 text-xs text-gray-500">(86)</span>
-                            </div>
-                            <!-- Price Section -->
-                            <span class="font-bold text-green-500">Rp 300K</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="overflow-hidden rounded-lg bg-white shadow-md">
-                    <img src="../assets/image-1.webp" alt="Course Image" class="h-32 w-full object-cover" />
-                    <div class="p-4">
-                        <h4 class="font-semibold sm:text-xs md:text-sm lg:text-base">Big 4 Auditor Financial Analyst</h4>
-                        <p class="mt-2 text-xs leading-relaxed text-gray-600">
-                            Mulai transformasi dengan instruktur profesional, harga yang terjangkau, dan...
-                        </p>
-                        <div class="mt-2 flex items-center">
-                            <img src="../assets/instructor-1.png" alt="Instructor" class="h-6 w-6 rounded-full" />
-                            <div class="ml-2">
-                                <span class="text-sm font-semibold text-gray-700">Jenna Ortega</span>
-                                <span class="text-sm text-gray-500">Senior Accountant di <b>Gojek</b></span>
-                            </div>
-                        </div>
-                        <div class="mt-4 flex items-center justify-between">
-                            <!-- Rating Section -->
-                            <div class="flex items-center space-x-1">
-                                <!-- Star icons -->
-                                <svg
-                                    class="h-4 w-4 text-yellow-400"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.974a1 1 0 00.95.69h4.18c.969 0 1.372 1.24.588 1.81l-3.396 2.47a1 1 0 00-.364 1.118l1.287 3.975c.3.92-.755 1.688-1.538 1.118l-3.396-2.47a1 1 0 00-1.176 0l-3.396 2.47c-.783.57-1.837-.198-1.538-1.118l1.287-3.975a1 1 0 00-.364-1.118l-3.396-2.47c-.784-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.974z"
-                                    ></path>
-                                </svg>
-                                <!-- Additional star icons -->
-                                <svg
-                                    class="h-4 w-4 text-yellow-400"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.974a1 1 0 00.95.69h4.18c.969 0 1.372 1.24.588 1.81l-3.396 2.47a1 1 0 00-.364 1.118l1.287 3.975c.3.92-.755 1.688-1.538 1.118l-3.396-2.47a1 1 0 00-1.176 0l-3.396 2.47c-.783.57-1.837-.198-1.538-1.118l1.287-3.975a1 1 0 00-.364-1.118l-3.396-2.47c-.784-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.974z"
-                                    ></path>
-                                </svg>
-                                <svg
-                                    class="h-4 w-4 text-yellow-400"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.974a1 1 0 00.95.69h4.18c.969 0 1.372 1.24.588 1.81l-3.396 2.47a1 1 0 00-.364 1.118l1.287 3.975c.3.92-.755 1.688-1.538 1.118l-3.396-2.47a1 1 0 00-1.176 0l-3.396 2.47c-.783.57-1.837-.198-1.538-1.118l1.287-3.975a1 1 0 00-.364-1.118l-3.396-2.47c-.784-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.974z"
-                                    ></path>
-                                </svg>
-                                <svg class="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                    <defs>
-                                        <linearGradient id="half">
-                                            <stop offset="50%" stop-color="currentColor" />
-                                            <stop offset="50%" stop-color="#d1d5db" />
-                                        </linearGradient>
-                                    </defs>
-                                    <path
-                                        fill="url(#half)"
-                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.974a1 1 0 00.95.69h4.18c.969 0 1.372 1.24.588 1.81l-3.396 2.47a1 1 0 00-.364 1.118l1.287 3.975c.3.92-.755 1.688-1.538 1.118l-3.396-2.47a1 1 0 00-1.176 0l-3.396 2.47c-.783.57-1.837-.198-1.538-1.118l1.287-3.975a1 1 0 00-.364-1.118l-3.396-2.47c-.784-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.974z"
-                                    ></path>
-                                </svg>
-                                <svg
-                                    class="h-4 w-4 text-gray-300"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.974a1 1 0 00.95.69h4.18c.969 0 1.372 1.24.588 1.81l-3.396 2.47a1 1 0 00-.364 1.118l1.287 3.975c.3.92-.755 1.688-1.538 1.118l-3.396-2.47a1 1 0 00-1.176 0l-3.396 2.47c-.783.57-1.837-.198-1.538-1.118l1.287-3.975a1 1 0 00-.364-1.118l-3.396-2.47c-.784-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.974z"
-                                    ></path>
-                                </svg>
-                                <span class="ml-1 text-sm text-gray-600">3.5</span>
-                                <span class="ml-1 text-xs text-gray-500">(86)</span>
-                            </div>
-                            <!-- Price Section -->
-                            <span class="font-bold text-green-500">Rp 300K</span>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- Duplicate the card structure for each additional card -->
             </div>
         </section>
 
         <!-- Newsletter Section -->
-        <section class="bg-footer-texture bg-black/80 bg-cover bg-center bg-no-repeat py-10 text-white bg-blend-darken">
+        <section class="bg-black/80 bg-footer-texture bg-cover bg-center bg-no-repeat py-10 text-white bg-blend-darken">
             <div class="container mx-auto text-center">
                 <h3 class="mb-4 text-xl font-semibold">Mau Belajar Lebih Banyak?</h3>
                 <p class="mb-6">Dapatkan informasi kursus terbaru dan penawaran spesial!</p>
@@ -552,53 +193,95 @@
         <!-- Footer -->
         <footer class="bg-white py-8">
             <div class="container mx-auto px-4">
-                <div class="flex flex-col items-start justify-between space-y-6 md:flex-row md:items-center md:space-y-0">
-                    <!-- Logo and Address Section -->
+                <!-- Logo and Address Section -->
+                <div class="flex flex-col space-y-6 md:flex-row md:justify-between md:space-y-0">
+                    <!-- Logo Section -->
                     <div class="flex flex-col space-y-2">
                         <img src="../assets/logo.svg" alt="Logo" class="w-[65%] md:w-[80%]" />
                         <p class="text-sm font-bold text-gray-600">Gali Potensi Anda Melalui Pembelajaran Video di hariesok.id!</p>
-                        <address class="text-sm text-gray-500">Jl. Usman Effendi No. 50, Lowokwaru, Malang</address>
-                        <p class="text-sm text-gray-500">+62-877-7123-1234</p>
+                        <address class="text-sm text-gray-500">
+                            Jl. Usman Effendi No. 50, Lowokwaru, Malang<br />
+                            +62-877-7123-1234
+                        </address>
                     </div>
 
-                    <!-- Links Section -->
-                    <div class="grid grid-cols-1 gap-6 text-sm md:grid-cols-3">
-                        <ul class="space-y-2">
-                            <li class="font-semibold">Kategori</li>
-                            <li><a href="#" class="text-gray-600 hover:text-gray-900">Digital & Teknologi</a></li>
-                            <li><a href="#" class="text-gray-600 hover:text-gray-900">Pemasaran</a></li>
-                            <li><a href="#" class="text-gray-600 hover:text-gray-900">Manajemen Bisnis</a></li>
-                            <li><a href="#" class="text-gray-600 hover:text-gray-900">Pengembangan Diri</a></li>
-                            <li><a href="#" class="text-gray-600 hover:text-gray-900">Desain</a></li>
-                        </ul>
+                    <!-- Collapsible Links for Mobile Devices -->
+                    <div class="w-full md:w-auto">
+                        <details class="group mb-2 md:hidden">
+                            <summary class="flex cursor-pointer justify-between py-2 font-semibold">
+                                Kategori
+                                <span class="text-gray-600 transition-transform group-open:rotate-90">&gt;</span>
+                            </summary>
+                            <ul class="space-y-2 pl-4">
+                                <li><a href="#" class="text-gray-600 hover:text-gray-900">Digital & Teknologi</a></li>
+                                <li><a href="#" class="text-gray-600 hover:text-gray-900">Pemasaran</a></li>
+                                <li><a href="#" class="text-gray-600 hover:text-gray-900">Manajemen Bisnis</a></li>
+                                <li><a href="#" class="text-gray-600 hover:text-gray-900">Pengembangan Diri</a></li>
+                                <li><a href="#" class="text-gray-600 hover:text-gray-900">Desain</a></li>
+                            </ul>
+                        </details>
+                        <details class="group mb-2 md:hidden">
+                            <summary class="flex cursor-pointer justify-between py-2 font-semibold">
+                                Perusahaan
+                                <span class="text-gray-600 transition-transform group-open:rotate-90">&gt;</span>
+                            </summary>
+                            <ul class="space-y-2 pl-4">
+                                <li><a href="#" class="text-gray-600 hover:text-gray-900">Tentang Kami</a></li>
+                                <li><a href="#" class="text-gray-600 hover:text-gray-900">FAQ</a></li>
+                                <li><a href="#" class="text-gray-600 hover:text-gray-900">Kebijakan Privasi</a></li>
+                                <li><a href="#" class="text-gray-600 hover:text-gray-900">Ketentuan Layanan</a></li>
+                                <li><a href="#" class="text-gray-600 hover:text-gray-900">Bantuan</a></li>
+                            </ul>
+                        </details>
+                        <details class="group mb-2 md:hidden">
+                            <summary class="flex cursor-pointer justify-between py-2 font-semibold">
+                                Komunitas
+                                <span class="text-gray-600 transition-transform group-open:rotate-90">&gt;</span>
+                            </summary>
+                            <ul class="space-y-2 pl-4">
+                                <li><a href="#" class="text-gray-600 hover:text-gray-900">Tips Sukses</a></li>
+                                <li><a href="#" class="text-gray-600 hover:text-gray-900">Blog</a></li>
+                            </ul>
+                        </details>
 
-                        <ul class="space-y-2">
-                            <li class="font-semibold">Perusahaan</li>
-                            <li><a href="#" class="text-gray-600 hover:text-gray-900">Tentang Kami</a></li>
-                            <li><a href="#" class="text-gray-600 hover:text-gray-900">FAQ</a></li>
-                            <li><a href="#" class="text-gray-600 hover:text-gray-900">Kebijakan Privasi</a></li>
-                            <li><a href="#" class="text-gray-600 hover:text-gray-900">Ketentuan Layanan</a></li>
-                        </ul>
+                        <!-- Links Section for Desktop -->
+                        <div class="hidden md:grid md:grid-cols-3 md:gap-6">
+                            <ul class="space-y-2">
+                                <li class="font-semibold">Kategori</li>
+                                <li><a href="#" class="text-gray-600 hover:text-gray-900">Digital & Teknologi</a></li>
+                                <li><a href="#" class="text-gray-600 hover:text-gray-900">Pemasaran</a></li>
+                                <li><a href="#" class="text-gray-600 hover:text-gray-900">Manajemen Bisnis</a></li>
+                                <li><a href="#" class="text-gray-600 hover:text-gray-900">Pengembangan Diri</a></li>
+                                <li><a href="#" class="text-gray-600 hover:text-gray-900">Desain</a></li>
+                            </ul>
 
-                        <ul class="space-y-2">
-                            <li class="font-semibold">Komunitas</li>
-                            <li><a href="#" class="text-gray-600 hover:text-gray-900">Tips Sukses</a></li>
-                            <li><a href="#" class="text-gray-600 hover:text-gray-900">Blog</a></li>
-                            <li><a href="#" class="text-gray-600 hover:text-gray-900">Kontak</a></li>
-                            <li><a href="#" class="text-gray-600 hover:text-gray-900">Bantuan</a></li>
-                        </ul>
+                            <ul class="space-y-2">
+                                <li class="font-semibold">Perusahaan</li>
+                                <li><a href="#" class="text-gray-600 hover:text-gray-900">Tentang Kami</a></li>
+                                <li><a href="#" class="text-gray-600 hover:text-gray-900">FAQ</a></li>
+                                <li><a href="#" class="text-gray-600 hover:text-gray-900">Kebijakan Privasi</a></li>
+                                <li><a href="#" class="text-gray-600 hover:text-gray-900">Ketentuan Layanan</a></li>
+                                <li><a href="#" class="text-gray-600 hover:text-gray-900">Bantuan</a></li>
+                            </ul>
+
+                            <ul class="space-y-2">
+                                <li class="font-semibold">Komunitas</li>
+                                <li><a href="#" class="text-gray-600 hover:text-gray-900">Tips Sukses</a></li>
+                                <li><a href="#" class="text-gray-600 hover:text-gray-900">Blog</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Divider Line -->
                 <hr class="my-6 border-t border-gray-200" />
 
-                <!-- Footer Bottom with Icons and Copyright Text -->
+                <!-- Footer Bottom Section -->
                 <div class="flex flex-col-reverse items-start md:flex-row md:items-center md:justify-between">
                     <!-- Copyright Text -->
-                    <div class="font-lato text-sm text-gray-500">&copy; 2023 Gerobak Sayur All Rights Reserved.</div>
+                    <div class="text-sm text-gray-500">&copy; 2023 Gerobak Sayur All Rights Reserved.</div>
 
-                    <!-- Social Media Icons Section with Border Circles -->
+                    <!-- Social Media Icons -->
                     <div class="mt-4 flex space-x-2 md:mt-0">
                         <a
                             href="https://www.linkedin.com"
